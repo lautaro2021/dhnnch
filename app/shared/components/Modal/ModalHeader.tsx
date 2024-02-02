@@ -1,3 +1,4 @@
+"use client";
 import { ArrowDownLeft, ArrowUpRight } from "@phosphor-icons/react";
 import { PALETTE } from "@/app/theme/theme";
 
@@ -9,11 +10,9 @@ function ModalHeader({
 }: {
     text: string;
     action?: () => void;
-    state: boolean;
+    state?: boolean;
     hiddenIcon?: boolean;
 }) {
-    console.log(hiddenIcon);
-
     return (
         <header className="w-full flex items-start justify-between">
             <label className="text-label font-label leading-label tracking-label text-darkGreyText">

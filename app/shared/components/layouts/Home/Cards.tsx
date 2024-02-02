@@ -1,23 +1,26 @@
-import Post from "../../Carrousel/Post";
-import ExpandedModal from "../../Modal/ExpandedModal";
+import Modal from "../../Modal/Modal";
+import ModalHeader from "../../Modal/ModalHeader";
+import ModalBody from "../../Modal/ModalBody";
+import Carousel from "../../Carrousel/Carousel";
 
 function Cards() {
     return (
-        <section className="bg-custom-gradient flex items-end py-[100px]">
-            <ExpandedModal
-                expandModal={true}
-                hideHeaderArrow={true}
-                overlineButton={true}
-                bgColor="bg-secondaryWhite"
-                title="Lorem ipsum dolor sit amet"
-                description="Lorem ipsum dolor sit amet, consectetur. Aenean sed metus vel diam consequat mollis. Praesent metus"
-                primary={false}
-            />
-            <Post
-                title="Lorem ipsum"
-                description="Quisque vel dictum magna."
-                cta={{ text: "Call to action", link: "" }}
-            />
+        <section className="bg-custom-gradient flex items-end py-[100px] gap-[24px]">
+            <Modal bgColor="bg-secondaryWhite">
+                <>
+                    <ModalHeader text="LOREM IPSUM" hiddenIcon />
+                    <ModalBody
+                        width="w-[420px]"
+                        size="m"
+                        title="Lorem ipsum dolor sit amet"
+                        description="Lorem ipsum dolor sit amet, consectetur. Aenean sed metus vel diam consequat mollis. Praesent metus"
+                        padding="pb-[40px]"
+                        expandModal
+                        overlineButton
+                    />
+                </>
+            </Modal>
+            <Carousel />
         </section>
     );
 }
