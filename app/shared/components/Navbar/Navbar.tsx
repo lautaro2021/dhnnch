@@ -13,7 +13,7 @@ function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full h-[88px] flex items-center justify-center px-120 border-b-2 border-grey bg-white z-1000">
+        <header className="fixed top-0 left-0 w-full h-[88px] flex items-center justify-center px-120 border-b-2 border-grey bg-white z-[100]">
             <picture>
                 <Image
                     src={"/assets/iso.png"}

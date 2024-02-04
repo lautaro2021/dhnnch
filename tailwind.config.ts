@@ -21,6 +21,7 @@ const config: Config = {
                 white: "#FFFFFF",
                 secondaryWhite: "#FAFAFA",
                 grey: "#212121",
+                lightGrey: "#E0E0E0",
                 darkGreyText: "#9E9E9E",
                 lightGreyText: "#616161",
             },
