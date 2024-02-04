@@ -5,7 +5,7 @@ import Carousel from "../../Carrousel/Carousel";
 
 function Cards() {
     return (
-        <section className="bg-custom-gradient flex items-end py-[100px] gap-[24px]">
+        <section className="bg-custom-gradient flex items-end py-[100px] relative w-full bg-red overflow-hidden">
             <Modal bgColor="bg-secondaryWhite">
                 <>
                     <ModalHeader text="LOREM IPSUM" hiddenIcon />
