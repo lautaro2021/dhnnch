@@ -1,13 +1,13 @@
 import Icon from "../generics/Icon";
 
-type NavbarLink = {
+export type NavbarOptionType = {
     link: string;
     text?: string;
     Icon?: () => JSX.Element;
-    border?: boolean;
+    action?: boolean;
 };
 
-export const navbarOptions: NavbarLink[] = [
+export const navbarOptions: NavbarOptionType[] = [
     {
         link: "",
         text: "Nosotros",
@@ -35,16 +35,16 @@ export const navbarOptions: NavbarLink[] = [
     {
         link: "",
         Icon: () => <Icon iconPath="/assets/light.png" />,
-        border: true,
+        action: true,
     },
     {
         link: "",
         text: "ES",
-        border: true,
+        action: true,
     },
     {
         link: "",
         text: "Sitios",
-        border: true,
+        action: true,
     },
 ];
