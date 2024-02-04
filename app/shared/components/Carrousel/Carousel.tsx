@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import CarouselFooter from "./CarouselFooter";
 import Post from "./Post";
 
@@ -20,6 +22,15 @@ function Carousel() {
         },
     ];
 
+    const [actualPost, setActualPost] = useState(1);
+
+    const handleNext = () => {
+        actualPost < carouselData.length && setActualPost((prev) => prev + 1);
+    };
+    const handlePrev = () => {
+        actualPost > 1 && setActualPost((prev) => prev - 1);
+    };
+
     return (
         <section className="flex flex-col items-end justify-start gap-[32px] overflow-hidden">
             <div className="flex flex-row gap-[24px]">
@@ -32,7 +43,12 @@ function Carousel() {
                     />
                 ))}
             </div>
-            <CarouselFooter />
+            <CarouselFooter
+                actionNext={handleNext}
+                actionPrev={handlePrev}
+                actualPost={actualPost}
+                totalDataSize={carouselData.length}
+            />
         </section>
     );
 }
