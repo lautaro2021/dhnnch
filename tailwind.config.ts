@@ -8,6 +8,29 @@ const config: Config = {
     ],
     theme: {
         extend: {
+            animation: {
+                "appear-menu": "menu .4s ease",
+            },
+            keyframes: {
+                menu: {
+                    "0%": { transform: "translateX(100%)", opacity: "0" },
+                    "100%": { transform: "translateX(0)", opacity: "1" },
+                },
+            },
+            screens: {
+                ssm: {
+                    max: "610px",
+                },
+                sm: {
+                    max: "720px",
+                },
+                md: {
+                    max: "1420px",
+                },
+                l: {
+                    min: "1421px",
+                },
+            },
             backgroundImage: {
                 "custom-gradient":
                     "linear-gradient(to right, #FAFAFA 50%, #FFFFFF 50%)",
@@ -24,6 +47,7 @@ const config: Config = {
                 lightGrey: "#E0E0E0",
                 darkGreyText: "#9E9E9E",
                 lightGreyText: "#616161",
+                borderGrey: "#E1E5EC",
             },
             spacing: {
                 "120": "120px",

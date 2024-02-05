@@ -34,7 +34,7 @@ export const navbarOptions: NavbarOptionType[] = [
     },
     {
         link: "",
-        Icon: () => <Icon iconPath="/assets/light.png" />,
+        Icon: () => <Icon />,
         action: true,
     },
     {

@@ -23,7 +23,7 @@ function Carousel() {
     ];
 
     const [actualPost, setActualPost] = useState(1);
-    const [carouselPosition, setCarouselPosition] = useState(564);
+    const [carouselPosition, setCarouselPosition] = useState(0);
 
     const handleNext = () => {
         if (actualPost < carouselData.length) {
@@ -39,11 +39,11 @@ function Carousel() {
     };
 
     return (
-        <section
-            className={`flex items-center justify-center overflow-hidden absolute top-[50%] left-[${carouselPosition}px] translate-y-[-50%] transition-all`}
-        >
-            <div className="flex flex-col items-end gap-[32px]">
-                <div className={`flex flex-row gap-[24px]`}>
+        <section className={`flex flex-col items-end gap-[32px]`}>
+            <div className="w-full overflow-hidden">
+                <div
+                    className={`flex flex-row gap-[24px] relative left-[${carouselPosition}px] transition-all`}
+                >
                     {carouselData.map((data, idx) => (
                         <Post
                             title={data.title}
@@ -53,13 +53,14 @@ function Carousel() {
                         />
                     ))}
                 </div>
-                <CarouselFooter
-                    actionNext={handleNext}
-                    actionPrev={handlePrev}
-                    actualPost={actualPost}
-                    totalDataSize={carouselData.length}
-                />
             </div>
+
+            <CarouselFooter
+                actionNext={handleNext}
+                actionPrev={handlePrev}
+                actualPost={actualPost}
+                totalDataSize={carouselData.length}
+            />
         </section>
     );
 }
