@@ -14,7 +14,6 @@ function Cards() {
                         size="m"
                         title="Lorem ipsum dolor sit amet"
                         description="Lorem ipsum dolor sit amet, consectetur. Aenean sed metus vel diam consequat mollis. Praesent metus"
-                        padding="pb-[40px]"
                         expandModal
                         overlineButton
                     />

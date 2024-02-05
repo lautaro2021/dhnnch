@@ -5,7 +5,7 @@ function Button({ text, overline }: { text: string; overline?: boolean }) {
                 overline
                     ? "border-[1px] border-primaryBlue bg-transparent text-primaryBlue hover:bg-primaryBlue hover:text-white"
                     : "bg-primaryBlue text-white hover:bg-transparent hover:text-primaryBlue border-[1px] border-primaryBlue"
-            } text-button font-button leading-button w-min whitespace-nowrap transition-all`}
+            } text-button font-button leading-button w-min whitespace-nowrap transition-all ssm:w-full`}
         >
             {text}
         </button>
