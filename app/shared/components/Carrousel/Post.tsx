@@ -1,24 +1,35 @@
-import Image from "next/image";
+import { forwardRef } from "react";
 import PostButton from "../generics/PostButton";
 import { IMAGE_URL } from "@/app/services/blog";
 
-function Post({
-    img,
-    title,
-    description,
-    slug,
-}: {
-    img?: string;
-    title: string;
-    description: string;
-    slug: string;
-}) {
+function Post(
+    {
+        img,
+        title,
+        description,
+        slug,
+    }: {
+        img?: string;
+        title: string;
+        description: string;
+        slug: string;
+    },
+    ref: React.Ref<HTMLDivElement>
+) {
     const url = `${IMAGE_URL}${img}`;
 
     return (
-        <article className="w-[384px] flex flex-col gap-[16px] min-w-[384px] sm:min-w-[300px]">
+        <article
+            ref={ref}
+            className="w-[384px] flex flex-col gap-[16px] min-w-[384px] sm:min-w-[300px] sm:max-w-[300px]"
+        >
             <picture className="relative w-full h-[282px] rounded-[8px] overflow-hidden">
-                <img src={url} alt={title} title={title} />
+                <img
+                    src={url}
+                    alt={title}
+                    title={title}
+                    className="object-cover"
+                />
             </picture>
             <hr className="h-[2px] bg-grey" />
             <div className="flex flex-col gap-[8px]">
@@ -34,4 +45,4 @@ function Post({
     );
 }
 
-export default Post;
+export default forwardRef(Post);

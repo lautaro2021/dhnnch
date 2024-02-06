@@ -10,7 +10,7 @@ function Carousel() {
     const [carouselPosition, setCarouselPosition] = useState(0);
     const [carouselData, setCarouselData] = useState<PostType[]>([]);
 
-    const postRef = useRef(null);
+    const postRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         service
@@ -22,13 +22,21 @@ function Carousel() {
     const handleNext = () => {
         if (actualPost < carouselData.length) {
             setActualPost((prev) => prev + 1);
-            setCarouselPosition((prev) => prev - 408);
+            setCarouselPosition(
+                (prev) =>
+                    prev -
+                    (postRef.current ? postRef.current.clientWidth + 24 : 408)
+            );
         }
     };
     const handlePrev = () => {
         if (actualPost > 1) {
             setActualPost((prev) => prev - 1);
-            setCarouselPosition((prev) => prev + 408);
+            setCarouselPosition(
+                (prev) =>
+                    prev +
+                    (postRef.current ? postRef.current.clientWidth + 24 : 408)
+            );
         }
     };
 
@@ -49,6 +57,7 @@ function Carousel() {
                                 description={data.attributes.description}
                                 slug={data.attributes.slug}
                                 key={idx}
+                                ref={postRef}
                             />
                         ))}
                     </div>
