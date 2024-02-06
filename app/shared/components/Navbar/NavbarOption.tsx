@@ -16,7 +16,7 @@ function NavbarOption({
     return (
         <li
             className={`h-full flex items-center px-[8px]
-        active:!text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer l:h-auto l:p-0 l:flex-col l:hover:border-none`}
+        active:!text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer l:h-auto l:p-0 l:flex-col l:hover:border-none l:pb-[24px] l:border-b-[1px] l:border-borderGrey`}
             onClick={() => action(idx)}
         >
             <span
@@ -31,7 +31,7 @@ function NavbarOption({
                     color={PALETTE.lightGrey}
                 />
             </span>
-            <hr className="hidden l:block mt-[24px] h-[1px] bg-borderGrey w-full" />
+            {/* <hr className="hidden l:block mt-[24px] h-[1px] bg-borderGrey w-full" /> */}
         </li>
     );
 }

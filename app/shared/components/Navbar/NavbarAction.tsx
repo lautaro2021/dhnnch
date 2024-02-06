@@ -17,8 +17,8 @@ function NavbarAction({
     return (
         <li
             className={`h-full flex items-center cursor-pointer px-[8px] border-r-[1px] border-grey ${
-                !opt.text && "border-l-[1px]"
-            } l:border-none l:p-0 l:h-auto l:flex-col`}
+                !opt.text && "border-l-[1px] l:border-l-0"
+            } l:p-0 l:h-auto l:flex-col l:pb-[24px] l:border-b-[1px] l:border-borderGrey l:border-r-0 l:last:border-none`}
             onClick={action}
         >
             <span className="text-p font-p leading-p px-[10px] text-grey inline-flex items-center l:p-0 l:justify-between l:w-full">
@@ -29,9 +29,6 @@ function NavbarAction({
                     color={PALETTE.lightGrey}
                 />
             </span>
-            {idx && idx !== navbarOptions.length - 1 && (
-                <hr className="hidden mt-[24px] h-[1px] bg-borderGrey w-full l:block" />
-            )}
         </li>
     );
 }
