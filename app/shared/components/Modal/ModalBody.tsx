@@ -8,6 +8,7 @@ function ModalBody({
     description,
     overlineButton,
     width,
+    paddingBottom,
 }: {
     size: "m" | "l";
     expandModal: boolean;
@@ -15,9 +16,14 @@ function ModalBody({
     description: string;
     overlineButton?: boolean;
     width?: string;
+    paddingBottom?: string;
 }) {
     return (
-        <div className={`${width && width} sm:px-[16px] sm:py-[32px]`}>
+        <div
+            className={`${width && width} ${
+                paddingBottom && paddingBottom
+            } ssm:p-0`}
+        >
             <label className="text-label font-label leading-label tracking-label text-darkGreyText hidden ssm:block">
                 LOREM IPSUM
             </label>

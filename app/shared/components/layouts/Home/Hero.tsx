@@ -22,7 +22,7 @@ function Hero() {
                     style={{ objectFit: "cover" }}
                 />
             </picture>
-            <Modal bgColor="bg-white" primary>
+            <Modal bgColor="bg-white" size="m">
                 <>
                     <ModalHeader
                         text="LOREM IPSUM"
