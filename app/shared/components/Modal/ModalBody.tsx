@@ -22,15 +22,19 @@ function ModalBody({
         <div
             className={`${width && width} ${
                 paddingBottom && paddingBottom
-            } ssm:p-0`}
+            } ssm:p-0 ssm:w-full`}
         >
-            <label className="text-label font-label leading-label tracking-label text-darkGreyText hidden ssm:block">
+            <label className="text-label font-label leading-label tracking-label text-darkGreyText hidden ssm:block ssm:mb-[8px]">
                 LOREM IPSUM
             </label>
             {size === "l" ? (
-                <h1 className="text-h1 font-h1 leading-h1">{title}</h1>
+                <h1 className="text-h1 font-h1 leading-h1 ssm:text-[32px] ssm:leading-[32px]">
+                    {title}
+                </h1>
             ) : (
-                <h2 className="text-h2 font-h2 leading-h2">{title}</h2>
+                <h2 className="text-h2 font-h2 leading-h2 ssm:text-[40px] ssm:leading-[40px]">
+                    {title}
+                </h2>
             )}
 
             <div
@@ -38,7 +42,7 @@ function ModalBody({
                     expandModal ? "flex" : "hidden"
                 } ssm:flex`}
             >
-                <hr className="h-[2px] w-[120px] bg-primaryBlue mt-[12px]" />
+                <hr className="h-[2px] w-[120px] bg-primaryBlue mt-[20px]" />
                 <p className="text-p font-p leading-p text-lightGreyText text-wrap">
                     {description}
                 </p>

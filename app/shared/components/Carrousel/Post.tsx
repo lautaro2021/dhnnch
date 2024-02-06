@@ -16,7 +16,7 @@ function Post({
     const url = `${IMAGE_URL}${img}`;
 
     return (
-        <article className="w-[384px] flex flex-col gap-[16px]">
+        <article className="w-[384px] flex flex-col gap-[16px] min-w-[384px] sm:min-w-[300px]">
             <picture className="relative w-full h-[282px] rounded-[8px] overflow-hidden">
                 <img src={url} alt={title} title={title} />
             </picture>

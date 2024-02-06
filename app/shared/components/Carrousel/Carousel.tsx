@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import CarouselFooter from "./CarouselFooter";
 import Post from "./Post";
 import service from "@/app/services/blog";
@@ -9,6 +9,8 @@ function Carousel() {
     const [actualPost, setActualPost] = useState(1);
     const [carouselPosition, setCarouselPosition] = useState(0);
     const [carouselData, setCarouselData] = useState<PostType[]>([]);
+
+    const postRef = useRef(null);
 
     useEffect(() => {
         service
@@ -31,22 +33,27 @@ function Carousel() {
     };
 
     return (
-        <section className={`flex flex-col items-end gap-[32px]`}>
-            <div className="w-full overflow-hidden">
-                <div
-                    className={`flex flex-row gap-[24px] relative left-[${carouselPosition.toString()}px] transition-all`}
-                >
-                    {carouselData?.map((data, idx) => (
-                        <Post
-                            img={data.attributes.image.data.attributes.url}
-                            title={data.attributes.title}
-                            description={data.attributes.description}
-                            slug={data.attributes.slug}
-                            key={idx}
-                        />
-                    ))}
+        <>
+            <section className={`flex min-w-[912px] overflow-hidden`}>
+                <div className="w-full">
+                    <div
+                        className={`flex flex-row gap-[24px] transition-all`}
+                        style={{
+                            transform: `translateX(${carouselPosition}px)`,
+                        }}
+                    >
+                        {carouselData?.map((data, idx) => (
+                            <Post
+                                img={data.attributes.image.data.attributes.url}
+                                title={data.attributes.title}
+                                description={data.attributes.description}
+                                slug={data.attributes.slug}
+                                key={idx}
+                            />
+                        ))}
+                    </div>
                 </div>
-            </div>
+            </section>
 
             <CarouselFooter
                 actionNext={handleNext}
@@ -54,7 +61,7 @@ function Carousel() {
                 actualPost={actualPost}
                 totalDataSize={carouselData.length}
             />
-        </section>
+        </>
     );
 }
 

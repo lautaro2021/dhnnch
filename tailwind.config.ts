@@ -21,8 +21,11 @@ const config: Config = {
                 ssm: {
                     max: "610px",
                 },
+                t: {
+                    max: "920px",
+                },
                 sm: {
-                    max: "720px",
+                    max: "1024px",
                 },
                 md: {
                     max: "1280px",

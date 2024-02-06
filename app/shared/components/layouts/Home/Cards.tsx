@@ -5,8 +5,8 @@ import Carousel from "../../Carrousel/Carousel";
 
 function Cards() {
     return (
-        <section className="bg-custom-gradient flex items-end py-[100px] w-full">
-            <Modal bgColor="bg-secondaryWhite" size="s">
+        <section className="l:bg-custom-gradient flex items-end py-[100px] w-full t:flex-col t:items-start t:justify-start t:overflow-hidden t:bg-white t:py-[60px]">
+            <Modal bgColor="bg-secondaryWhite sm:!bg-white" size="s">
                 <>
                     <ModalHeader text="LOREM IPSUM" hiddenIcon />
                     <ModalBody
@@ -20,7 +20,9 @@ function Cards() {
                     />
                 </>
             </Modal>
-            <Carousel />
+            <div className="overflow-hidden t:pl-[120px] ssm:!pl-[16px]">
+                <Carousel />
+            </div>
         </section>
     );
 }
