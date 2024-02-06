@@ -1,29 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CarouselFooter from "./CarouselFooter";
 import Post from "./Post";
+import service from "@/app/services/blog";
+import type { PostType } from "../models/post.model";
 
 function Carousel() {
-    const carouselData = [
-        {
-            title: "Lorem ipsum",
-            description: "Quisque vel dictum magna.",
-            cta: { text: "Call to action", link: "" },
-        },
-        {
-            title: "Lorem ipsum",
-            description: "Quisque vel dictum magna.",
-            cta: { text: "Call to action", link: "" },
-        },
-        {
-            title: "Lorem ipsum",
-            description: "Quisque vel dictum magna.",
-            cta: { text: "Call to action", link: "" },
-        },
-    ];
-
     const [actualPost, setActualPost] = useState(1);
     const [carouselPosition, setCarouselPosition] = useState(0);
+    const [carouselData, setCarouselData] = useState<PostType[]>([]);
+
+    useEffect(() => {
+        service
+            .getPosts()
+            .then((data) => setCarouselData(data.data.data))
+            .catch((err) => console.log(err));
+    }, []);
 
     const handleNext = () => {
         if (actualPost < carouselData.length) {
@@ -42,13 +34,14 @@ function Carousel() {
         <section className={`flex flex-col items-end gap-[32px]`}>
             <div className="w-full overflow-hidden">
                 <div
-                    className={`flex flex-row gap-[24px] relative left-[${carouselPosition}px] transition-all`}
+                    className={`flex flex-row gap-[24px] relative left-[${carouselPosition.toString()}px] transition-all`}
                 >
-                    {carouselData.map((data, idx) => (
+                    {carouselData?.map((data, idx) => (
                         <Post
-                            title={data.title}
-                            description={data.description}
-                            cta={data.cta}
+                            img={data.attributes.image.data.attributes.url}
+                            title={data.attributes.title}
+                            description={data.attributes.description}
+                            slug={data.attributes.slug}
                             key={idx}
                         />
                     ))}

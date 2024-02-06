@@ -25,15 +25,18 @@ const config: Config = {
                     max: "720px",
                 },
                 md: {
-                    max: "1420px",
+                    max: "1280px",
                 },
                 l: {
-                    min: "1421px",
+                    min: "1281px",
                 },
             },
             backgroundImage: {
                 "custom-gradient":
                     "linear-gradient(to right, #FAFAFA 50%, #FFFFFF 50%)",
+            },
+            backgroundColor: {
+                backdrop: "rgba(0, 0, 0, 0.25)",
             },
             borderColor: {
                 grey: "#E1E5EC",

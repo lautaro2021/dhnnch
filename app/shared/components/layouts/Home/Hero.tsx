@@ -19,7 +19,7 @@ function Hero() {
                     src="/assets/hero.webp"
                     fill
                     alt="bg"
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
                 />
             </picture>
             <Modal bgColor="bg-white" primary>

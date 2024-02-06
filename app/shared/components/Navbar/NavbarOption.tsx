@@ -19,20 +19,18 @@ function NavbarOption({
         active:text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer md:h-auto md:p-0 md:flex-col md:hover:border-none`}
             onClick={() => action(idx)}
         >
-            <div className="inline-flex items-center md:justify-between md:w-full">
-                <span
-                    className={`text-p font-p leading-p px-[10px] text-grey ${
-                        optionSelected === text && "text-primaryBlue"
-                    } md:p-0`}
-                >
-                    {text}
-                </span>
+            <span
+                className={`text-p font-p leading-p px-[10px] text-grey inline-flex items-center md:justify-between md:w-full ${
+                    optionSelected === text && "text-primaryBlue"
+                } md:p-0`}
+            >
+                {text}
                 <CaretRight
                     className="hidden md:block"
                     size={24}
                     color={PALETTE.lightGrey}
                 />
-            </div>
+            </span>
             <hr className="hidden md:block mt-[24px] h-[1px] bg-borderGrey w-full" />
         </li>
     );
