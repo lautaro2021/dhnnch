@@ -18,6 +18,9 @@ const config: Config = {
                 },
             },
             screens: {
+                p: {
+                    max: "380px",
+                },
                 ssm: {
                     max: "610px",
                 },

@@ -60,7 +60,7 @@ function Navbar() {
                     className="fixed w-screen h-screen top-[61px] bg-backdrop"
                     onClick={() => setOpenMenu(false)}
                 >
-                    <ul className="flex flex-col w-full h-auto bg-white fixed px-[16px] pt-[40px] pb-[24px] gap-[24px] animate-appear-menu z-[100] top-[61px] l:hidden border-b-[2px] border-primaryBlue">
+                    <ul className="flex flex-col w-full h-auto bg-white fixed px-[16px] pt-[40px] pb-[24px] gap-[24px] animate-appear-menu z-[100] top-[61px] l:hidden border-b-[2px] border-primaryBlue p:h-screen p:overflow-auto p:pb-[120px]">
                         {navbarOptions.map((val, idx) => (
                             <React.Fragment key={idx}>
                                 {val.action ? (

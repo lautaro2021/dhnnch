@@ -16,11 +16,11 @@ function NavbarOption({
     return (
         <li
             className={`h-full flex items-center px-[8px]
-        active:text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer md:h-auto md:p-0 md:flex-col md:hover:border-none`}
+        active:!text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer md:h-auto md:p-0 md:flex-col md:hover:border-none`}
             onClick={() => action(idx)}
         >
             <span
-                className={`text-p font-p leading-p px-[10px] text-grey inline-flex items-center md:justify-between md:w-full ${
+                className={`text-p font-p leading-p px-[10px] text-grey inline-flex items-center md:justify-between md:w-full active:text-primaryBlue ${
                     optionSelected === text && "text-primaryBlue"
                 } md:p-0`}
             >
