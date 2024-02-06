@@ -15,6 +15,7 @@ function FilterTest() {
             .finally(() => setIsLoading(false));
     };
 
+    //the endpoint can be optimized, this is just an example of functionalitty
     console.log("postData", data?.data?.data[0]?.attributes);
 
     return (
@@ -22,7 +23,7 @@ function FilterTest() {
             <h1 className="text-h2 font-h2 leading-h2">
                 TEST GET DATA BY CATEGORY
             </h1>
-            {data && <p>Data success! see in browser console</p>}
+            {data && !isLoading && <p>Data success! view in browser console</p>}
             {isLoading && (
                 <h3 className="text-h1 font-h1 leading-h1 text-black">
                     Loading..
