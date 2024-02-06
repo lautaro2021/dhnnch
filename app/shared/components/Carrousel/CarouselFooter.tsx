@@ -13,7 +13,7 @@ function CarouselFooter({
     totalDataSize: number;
 }) {
     return (
-        <div className="flex flex-row items-center justify-end gap-[60px] w-scren mt-[32px] t:justify-start">
+        <div className="flex flex-row items-center justify-end gap-[60px] mt-[32px] t:justify-start">
             <div className="text-span font-span leading-span ">
                 <span className="text-grey">0{actualPost}</span>
                 <span className="text-primaryBlue font-bold">{` / `}</span>

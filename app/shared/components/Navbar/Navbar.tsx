@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { navbarOptions } from "../models/navbar.model";
 import NavbarOption from "./NavbarOption";
 import NavbarAction from "./NavbarAction";
@@ -20,22 +21,24 @@ function Navbar() {
 
     return (
         <header className="fixed top-0 left-0 w-full h-[89px] flex items-center justify-center px-120 border-b-[1px] border-grey bg-white z-[100] l:px-[16px] l:h-[61px]">
-            <picture className="l:w-full l:border-r-[1px] l:border-grey h-full flex items-center">
-                <Image
-                    src={"/assets/iso.png"}
-                    alt="logotype"
-                    width={178}
-                    height={48}
-                    className="sm:hidden"
-                />
-                <Image
-                    src={"/assets/iso-sm.png"}
-                    alt="logotype"
-                    width={135}
-                    height={36}
-                    className="hidden sm:block"
-                />
-            </picture>
+            <Link href={"/"} className="w-full xl:w-auto h-full">
+                <picture className="l:w-full l:border-r-[1px] l:border-grey h-full flex items-center">
+                    <Image
+                        src={"/assets/iso.png"}
+                        alt="logotype"
+                        width={178}
+                        height={48}
+                        className="sm:hidden"
+                    />
+                    <Image
+                        src={"/assets/iso-sm.png"}
+                        alt="logotype"
+                        width={135}
+                        height={36}
+                        className="hidden sm:block"
+                    />
+                </picture>
+            </Link>
             <ul className="w-full h-full flex items-center justify-center l:hidden">
                 {navbarOptions.map((val, idx) => (
                     <React.Fragment key={idx}>
