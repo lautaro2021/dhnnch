@@ -14,7 +14,7 @@ function ModalHeader({
     hiddenIcon?: boolean;
 }) {
     return (
-        <header className="w-full flex items-start justify-between ssm:hidden">
+        <header className="w-full flex items-start justify-between sm:hidden">
             <label className="text-label font-label leading-label tracking-label text-darkGreyText">
                 {text}
             </label>

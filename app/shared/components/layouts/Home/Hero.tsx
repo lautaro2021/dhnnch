@@ -13,8 +13,8 @@ function Hero() {
     };
 
     return (
-        <section className="w-full h-screen bg-[url('/assets/hero.webp')] bg-cover flex items-end ssm:bg-none ssm:flex ssm:flex-col">
-            <picture className="w-full h-full relative hidden ssm:block">
+        <section className="w-full h-screen bg-[url('/assets/hero.webp')] bg-cover flex items-end sm:bg-none sm:flex sm:flex-col">
+            <picture className="w-full h-full relative hidden sm:block">
                 <Image
                     src="/assets/hero.webp"
                     fill

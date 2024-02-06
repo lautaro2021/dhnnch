@@ -21,19 +21,19 @@ const config: Config = {
                 p: {
                     max: "380px",
                 },
-                ssm: {
+                sm: {
                     max: "610px",
                 },
                 t: {
                     max: "920px",
                 },
-                sm: {
+                m: {
                     max: "1024px",
                 },
-                md: {
+                l: {
                     max: "1280px",
                 },
-                l: {
+                xl: {
                     min: "1281px",
                 },
             },

@@ -16,22 +16,22 @@ function NavbarOption({
     return (
         <li
             className={`h-full flex items-center px-[8px]
-        active:!text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer md:h-auto md:p-0 md:flex-col md:hover:border-none`}
+        active:!text-primaryBlue hover:border-b-[2px] hover:border-primaryBlue cursor-pointer l:h-auto l:p-0 l:flex-col l:hover:border-none`}
             onClick={() => action(idx)}
         >
             <span
-                className={`text-p font-p leading-p px-[10px] text-grey inline-flex items-center md:justify-between md:w-full active:text-primaryBlue ${
+                className={`text-p font-p leading-p px-[10px] text-grey inline-flex items-center l:justify-between l:w-full active:text-primaryBlue ${
                     optionSelected === text && "text-primaryBlue"
-                } md:p-0`}
+                } l:p-0`}
             >
                 {text}
                 <CaretRight
-                    className="hidden md:block"
+                    className="hidden l:block"
                     size={24}
                     color={PALETTE.lightGrey}
                 />
             </span>
-            <hr className="hidden md:block mt-[24px] h-[1px] bg-borderGrey w-full" />
+            <hr className="hidden l:block mt-[24px] h-[1px] bg-borderGrey w-full" />
         </li>
     );
 }

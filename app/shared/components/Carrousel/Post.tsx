@@ -21,7 +21,7 @@ function Post(
     return (
         <article
             ref={ref}
-            className="w-[384px] flex flex-col gap-[16px] min-w-[384px] sm:min-w-[300px] sm:max-w-[300px]"
+            className="w-[384px] flex flex-col gap-[16px] min-w-[384px] m:min-w-[300px] m:max-w-[300px]"
         >
             <picture className="relative w-full h-[282px] rounded-[8px] overflow-hidden">
                 <img

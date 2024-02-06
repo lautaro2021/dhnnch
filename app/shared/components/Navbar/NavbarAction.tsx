@@ -18,19 +18,19 @@ function NavbarAction({
         <li
             className={`h-full flex items-center cursor-pointer px-[8px] border-r-[1px] border-grey ${
                 !opt.text && "border-l-[1px]"
-            } md:border-none md:p-0 md:h-auto md:flex-col`}
+            } l:border-none l:p-0 l:h-auto l:flex-col`}
             onClick={action}
         >
-            <span className="text-p font-p leading-p px-[10px] text-grey md:p-0 inline-flex items-center md:justify-between md:w-full">
+            <span className="text-p font-p leading-p px-[10px] text-grey inline-flex items-center l:p-0 l:justify-between l:w-full">
                 {opt.Icon ? <opt.Icon /> : opt.text}
                 <CaretRight
-                    className="hidden md:block"
+                    className="hidden l:block"
                     size={24}
                     color={PALETTE.lightGrey}
                 />
             </span>
             {idx && idx !== navbarOptions.length - 1 && (
-                <hr className="hidden md:block mt-[24px] h-[1px] bg-borderGrey w-full" />
+                <hr className="hidden mt-[24px] h-[1px] bg-borderGrey w-full l:block" />
             )}
         </li>
     );

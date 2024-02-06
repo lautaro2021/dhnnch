@@ -19,8 +19,8 @@ function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 left-0 w-full h-[89px] flex items-center justify-center px-120 border-b-[1px] border-grey bg-white z-[100] md:px-[16px] md:h-[61px]">
-            <picture className="md:w-full md:border-r-[1px] md:border-grey h-full flex items-center">
+        <header className="fixed top-0 left-0 w-full h-[89px] flex items-center justify-center px-120 border-b-[1px] border-grey bg-white z-[100] l:px-[16px] l:h-[61px]">
+            <picture className="l:w-full l:border-r-[1px] l:border-grey h-full flex items-center">
                 <Image
                     src={"/assets/iso.png"}
                     alt="logotype"
@@ -36,7 +36,7 @@ function Navbar() {
                     className="hidden sm:block"
                 />
             </picture>
-            <ul className="w-full h-full flex items-center justify-center md:hidden">
+            <ul className="w-full h-full flex items-center justify-center l:hidden">
                 {navbarOptions.map((val, idx) => (
                     <React.Fragment key={idx}>
                         {val.action ? (
@@ -52,15 +52,15 @@ function Navbar() {
                     </React.Fragment>
                 ))}
             </ul>
-            <div className="hidden md:block pl-[16px]">
+            <div className="hidden l:block pl-[16px]">
                 <List size={24} onClick={handleMenu} />
             </div>
             {openMenu && (
                 <div
-                    className="fixed w-screen h-screen top-[61px] bg-backdrop"
+                    className="fixed w-screen h-screen top-[61px] bg-backdrop xl:hidden"
                     onClick={() => setOpenMenu(false)}
                 >
-                    <ul className="flex flex-col w-full h-auto bg-white fixed px-[16px] pt-[40px] pb-[24px] gap-[24px] animate-appear-menu z-[100] top-[61px] l:hidden border-b-[2px] border-primaryBlue p:h-screen p:overflow-auto p:pb-[120px]">
+                    <ul className="flex flex-col w-full h-auto bg-white fixed px-[16px] pt-[40px] pb-[24px] gap-[24px] animate-appear-menu z-[100] top-[61px] border-b-[2px] border-primaryBlue p:h-screen p:overflow-auto p:pb-[120px] xl:hidden">
                         {navbarOptions.map((val, idx) => (
                             <React.Fragment key={idx}>
                                 {val.action ? (
